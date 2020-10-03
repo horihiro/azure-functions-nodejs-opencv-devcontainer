@@ -59,6 +59,7 @@ RUN apt-get update \
     && mkdir -p /home/site/wwwroot \
     && cd /home/site/wwwroot \ 
     && npm install opencv4nodejs \
+    && ls -d /home/site/wwwroot/node_modules/opencv-build/opencv/build/* | grep -v "lib" | xargs rm -rf \
     && tar -zcf /tmp/node_modules.tar.gz ./node_modules/ \
     && rm -rf /home/site/wwwroot/* \
     #
